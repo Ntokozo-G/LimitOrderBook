@@ -129,7 +129,7 @@ public class OrderBook {
 
     }
 
-    // Return Price based on Side ('B' bid or 'O' offer and Level) from OrderBook
+    // Return Price based on Side (bid or offer and Level) from OrderBook
     public double getPrice(String side, int level) {
         if (side.toLowerCase().equals(OrderSide.BID.label) || side.toLowerCase().equals(OrderSide.OFFER.label)) {
             List<Order> orders = ordersBySide.get(side.toLowerCase());
@@ -155,7 +155,7 @@ public class OrderBook {
         }
     }
 
-    // Return OrderBook Size based on Side ('B' bid or 'O' offer)
+    // Return OrderBook Size based on Side ( bid or offer)
     public long getTotalSize(String side) {
         if (side.toLowerCase().equals(OrderSide.BID.label) || side.toLowerCase().equals(OrderSide.OFFER.label)) {
             List<Order> orders = ordersBySide.get(side.toLowerCase());
@@ -169,7 +169,7 @@ public class OrderBook {
         }
     }
 
-    // Return all the orders from that side ('B' bid or 'O' offer and Level)  of the book, in level- and time-order based on Side
+    // Return all the orders from that side (bid or offer and Level)  of the book, in level- and time-order based on Side
     public List<Order> getOrders(String side) {
         if ((side.toLowerCase()).equals(OrderSide.BID.label) || side.toLowerCase().equals(OrderSide.OFFER.label)) {
             List<Order> orders = ordersBySide.get(side.toLowerCase());
@@ -182,6 +182,7 @@ public class OrderBook {
         }
     }
 
+    //TODO: Swap order positions based on the time timestamps or implement a better data structure maybe a Queue
     public void Swap (Order order1, Order order2){
         Order temp = order1;
         order1 = order2;

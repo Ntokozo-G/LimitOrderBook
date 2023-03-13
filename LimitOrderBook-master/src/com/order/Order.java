@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 
 public class Order {
 
-    // The Order class could significantly be improved with the inclusion of a timestamp variable
+    // TODO: The Order class could significantly be improved with the inclusion of a timestamp
+    // variable to make it easier for order priority maybe
 
     private String id; // id of order
     private double price ;
@@ -41,7 +42,7 @@ public class Order {
     public LocalDateTime getTimestamp() {
         return timestamp;
     }
-//Suggestion, having setters would make it easier to modify existing orders
+    //TODO: having setters would make it easier to modify existing orders
     /*public void setId(long id) {
         this.id = id;
     }
